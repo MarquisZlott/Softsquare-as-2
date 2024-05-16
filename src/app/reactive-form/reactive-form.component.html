@@ -1,0 +1,33 @@
+<p>reactive-form works!</p>
+
+<div [formGroup] = "group">
+    <label for="name">name</label>
+    <input id="name" type="text" formControlName="name">
+    <br>
+
+    <label for="age">age</label>
+    <input id="age" type="number" formControlName="age">
+    <br>
+
+    <label for="email">email</label>
+    <input id="email" type="text" formControlName="email">
+    <br>
+
+    <label for="password">password</label>
+    <input id="password" type="text" formControlName="password">
+    <br>
+
+    <div formArrayName="array">
+        <div *ngFor="let control of array.controls; let i = index">
+            <label [for]="'array'+i">{{i}}</label>
+            <input [id]="'array'+i" type="text" [formControlName]="i">
+
+        </div>
+
+    </div>
+</div>
+
+<pre>{{group.value | json}}</pre>
+
+
+<button [disabled] = "!group.valid">save</button>
