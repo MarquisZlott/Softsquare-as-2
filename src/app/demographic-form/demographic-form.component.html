@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="form-container">
+        <h2>Demographic Form</h2>
+            <form [formGroup]="demographicForm" (ngSubmit)="onSubmit()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+            <div *ngIf="demographicForm.get('name')?.invalid && (demographicForm.get('name')?.dirty || demographicForm.get('name')?.touched)" class="error-text">
+                Please enter a valid name
+            </div>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="name" formControlName="lastname" placeholder="Enter your last name">
+            <div *ngIf="demographicForm.get('lastname')?.invalid && (demographicForm.get('lastname')?.dirty || demographicForm.get('lastname')?.touched)" class="error-text">
+                Please enter a valid last name
+            </div>
+            
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+            <div *ngIf="demographicForm.get('email')?.invalid && (demographicForm.get('email')?.dirty || demographicForm.get('email')?.touched)" class="error-text">
+                Please enter a valid email address
+            </div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" formControlName="dob">
+            <div *ngIf="demographicForm.get('dob')?.invalid && (demographicForm.get('dob')?.dirty || demographicForm.get('dob')?.touched)" class="error-text">
+                Date of Birth is required
+            </div>
+
+            <label for="telephone">Telephone Number:</label>
+            <input type="tel" id="telephone" formControlName="telephone" placeholder="Enter your telephone number">
+            <div *ngIf="demographicForm.get('telephone')?.invalid && (demographicForm.get('telephone')?.dirty || demographicForm.get('telephone')?.touched)" class="error-text">
+                Please enter a valid telephone number
+            </div>
+            
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" formControlName="address" placeholder="Enter your address">
+            <div *ngIf="demographicForm.get('address')?.invalid && (demographicForm.get('address')?.dirty || demographicForm.get('address')?.touched)" class="error-text">
+                Address is required
+            </div>
+
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" formControlName="zipcode" placeholder="Enter your zip code">
+            <div *ngIf="demographicForm.get('zipcode')?.invalid && (demographicForm.get('zipcode')?.dirty || demographicForm.get('zipcode')?.touched)" class="error-text">
+                Zip Code is required
+            </div>
+
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" formControlName="fatherName" placeholder="Enter your father's name">
+            <div *ngIf="demographicForm.get('fatherName')?.invalid && (demographicForm.get('fatherName')?.dirty || demographicForm.get('fatherName')?.touched)" class="error-text">
+                Name must be alphabet
+            </div>
+
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" formControlName="motherName" placeholder="Enter your mother's name">
+            <div *ngIf="demographicForm.get('motherName')?.invalid && (demographicForm.get('motherName')?.dirty || demographicForm.get('motherName')?.touched)" class="error-text">
+                Name must be alphabet
+            </div>
+
+            <label for="height">Height:</label>
+            <input type="text" id="height" formControlName="height" placeholder="Enter your height in centimeter">
+            <div *ngIf="demographicForm.get('height')?.invalid && (demographicForm.get('height')?.dirty || demographicForm.get('height')?.touched)" class="error-text">
+                Height must be number
+            </div>
+
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" formControlName="weight" placeholder="Enter your weight in kilogram">
+            <div *ngIf="demographicForm.get('weight')?.invalid && (demographicForm.get('weight')?.dirty || demographicForm.get('weight')?.touched)" class="error-text">
+                Weight must be number
+            </div>
+
+            <div class="button-container">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</div>

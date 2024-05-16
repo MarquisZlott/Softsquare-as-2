@@ -1,0 +1,22 @@
+<div appRandomCounter>
+    <div class="login-container">
+        <h2 style="color: orangered">Login</h2>
+        <form action="#" method="post">
+            <div [formGroup]="Login">
+            <p>Email</p>
+            <input type="text" formControlName="email" placeholder="Enter your Email">
+            <p>Password</p>
+            <input type="password" formControlName="password" placeholder="Enter your Password">
+
+            <input type="checkbox" id="checkbox" name="checkbox">
+            <label for="checkbox">Remember me</label>
+
+            <input *ngIf="Login.valid" type="submit" value="LOGIN" [disabled]="!Login.valid">
+            <p *ngIf="!Login.valid">The Login button will only show if all requirement are fullfill</p>
+            </div>
+        </form>
+        <button appRandomButton>กดให้ได้ดิ</button>
+        <!-- <div appRandomCounter>T</div> -->
+        {{"Hello guy" | reduce: 2}}
+    </div>
+</div>
